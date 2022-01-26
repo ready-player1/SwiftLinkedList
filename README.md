@@ -14,8 +14,8 @@ while !people.isEmpty {
   for _ in 1..<k {
     people.nextNode()
   }
-  print("\(people.remove()!) ", terminator: "")
-  people.nextNode()
+  let cur = people.nextNode()
+  print("\(people.remove(cur)!) ", terminator: "")
 }
 print()
 ```
