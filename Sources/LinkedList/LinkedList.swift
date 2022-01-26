@@ -251,11 +251,6 @@ public class LinkedList<Element: Equatable> {
   }
 
   @discardableResult
-  public func remove() -> Element? {
-    remove(ptr)
-  }
-
-  @discardableResult
   public func popFirst() -> Element? {
     remove(head)
   }
