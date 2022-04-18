@@ -120,6 +120,33 @@ final class SwiftLinkedListTests: XCTestCase {
     XCTAssertNil(returned)
   }
 
+  func testRemovingNodeThatIsPointedByPtrProperty() {
+    XCTAssertEqual("\(intList)", "LinkedList[]")
+    XCTAssertNil(intList.remove(Node<Int>(1)))
+
+    intList.append(contentsOf: [1, 2, 3])
+    XCTAssertEqual("\(intList)", "LinkedList[1, 2, 3]")
+
+    XCTAssertEqual(intList.ptr, intList.head)
+    var removed = intList.remove(intList.ptr) // intList.popFirst()
+    XCTAssertEqual(removed, 1)
+    XCTAssertEqual("\(intList)", "LinkedList[2, 3]")
+    XCTAssertEqual(intList.ptr, intList.head)
+    XCTAssertEqual(String(describing: intList.ptr!), "Node(2)")
+
+    intList.pointToTail()
+    XCTAssertEqual(intList.ptr, intList.tail)
+    removed = intList.remove(intList.ptr) // intList.popLast()
+    XCTAssertEqual(removed, 3)
+    XCTAssertEqual("\(intList)", "LinkedList[2]")
+    XCTAssertEqual(String(describing: intList.ptr!), "Node(2)")
+
+    removed = intList.remove(intList.ptr)
+    XCTAssertEqual(removed, 2)
+    XCTAssertEqual("\(intList)", "LinkedList[]")
+    XCTAssertNil(intList.ptr)
+  }
+
   func testRemovingNodeThatSatisfyPredicate() {
     XCTAssertEqual("\(intList)", "LinkedList[]")
     XCTAssertNil(intList.remove { $0 % 2 == 0 })

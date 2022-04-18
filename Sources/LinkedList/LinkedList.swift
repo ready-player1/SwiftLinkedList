@@ -7,14 +7,6 @@ public class Node<Element: Equatable> {
     self.value = value
   }
 
-  private init(_ value: Element, _ prev: Node?, _ next: Node?, _ list: LinkedList<Element>?) {
-    (self.value, self.prev, self.next, self.list) = (value, prev, next, list)
-  }
-
-  func dup() -> Node {
-    Node<Element>(value, prev, next, list)
-  }
-
   func link(_ node: Node) {
     (next, node.prev) = (node, self)
   }
@@ -233,14 +225,13 @@ public class LinkedList<Element: Equatable> {
       return nil
     }
 
-    switch (head, tail) {
-    case (node, node): (head, tail) = (nil, nil)
-    case (node, _   ): head = node.next
-    case (_   , node): tail = node.prev
-    case (_   , _   ): ()
-    }
-    if ptr == node {
-      ptr = node.dup()
+    switch (head, tail, ptr) {
+    case (node, node, _   ): (head, tail, ptr) = (nil, nil, nil)
+    case (node, _   , node): (head, ptr) = (node.next, node.next)
+    case (_   , node, node): (tail, ptr) = (node.prev, node.prev)
+    case (node, _   , _   ): head = node.next
+    case (_   , node, _   ): tail = node.prev
+    case (_   , _   , _   ): precondition(ptr != node, "Cannot remove the node that is the pointed by the ptr property except head or tail")
     }
     count -= 1
     node.list = nil
