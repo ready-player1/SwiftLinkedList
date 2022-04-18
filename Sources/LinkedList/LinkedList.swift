@@ -98,6 +98,18 @@ public class LinkedList<Element: Equatable> {
   }
 
   @discardableResult
+  public func advance(distance: Int) -> Node<Element>? {
+    guard distance != 0 else {
+      return ptr
+    }
+    let (advance, n) = distance < 0 ? (prevNode, -distance) : (nextNode, distance)
+    for _ in 1..<n {
+      _ = advance()
+    }
+    return advance()
+  }
+
+  @discardableResult
   public func pointToHead() -> LinkedList {
     ptr = head
     return self
