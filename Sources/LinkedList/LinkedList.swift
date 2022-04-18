@@ -55,9 +55,6 @@ public class LinkedList<Element: Equatable> {
     }
   }
 
-  public var prev: Node<Element>? { ptr?.prev }
-  public var next: Node<Element>? { ptr?.next }
-
   public var isEmpty: Bool { head == nil }
 
   public private(set) var count = 0
