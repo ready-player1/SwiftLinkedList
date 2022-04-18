@@ -205,26 +205,26 @@ final class SwiftLinkedListTests: XCTestCase {
      the ptr property. The node isn't the next node of the pointed node.
     */
     var cur = intList.nextNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(1))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(1))")
 
     cur = intList.nextNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(2))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(2))")
 
     cur = intList.nextNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(3))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(3))")
     XCTAssertEqual(cur, intList.tail)
     XCTAssertNil(cur!.next)
 
     XCTAssertNil(intList.nextNode())
 
     cur = intList.nextNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(1))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(1))")
 
     cur = intList.nextNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(2))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(2))")
 
     cur = intList.nextNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(3))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(3))")
     XCTAssertEqual(cur, intList.tail)
     XCTAssertNil(cur!.next)
 
@@ -255,20 +255,20 @@ final class SwiftLinkedListTests: XCTestCase {
      the ptr property. The node isn't the previous node of the pointed node.
     */
     var cur = intList.prevNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(1))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(1))")
     XCTAssertEqual(cur, intList.head)
     XCTAssertNil(cur!.prev)
 
     XCTAssertNil(intList.prevNode())
 
     cur = intList.prevNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(3))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(3))")
 
     cur = intList.prevNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(2))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(2))")
 
     cur = intList.prevNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(1))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(1))")
     XCTAssertEqual(cur, intList.head)
     XCTAssertNil(cur!.prev)
 
@@ -295,13 +295,13 @@ final class SwiftLinkedListTests: XCTestCase {
     XCTAssertEqual("\(intList)", "LinkedList[1, 2, 3]")
 
     var cur = intList.nextNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(1))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(1))")
 
     cur = intList.nextNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(2))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(2))")
 
     cur = intList.nextNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(3))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(3))")
     XCTAssertEqual(cur, intList.tail)
     XCTAssertNil(cur!.next)
     /*
@@ -310,18 +310,18 @@ final class SwiftLinkedListTests: XCTestCase {
     */
 
     cur = intList.nextNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(1))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(1))")
 
     cur = intList.nextNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(2))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(2))")
 
     cur = intList.nextNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(3))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(3))")
     XCTAssertEqual(cur, intList.tail)
     XCTAssertNil(cur!.next)
 
     cur = intList.prevNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(1))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(1))")
     XCTAssertEqual(cur, intList.head)
     XCTAssertNil(cur!.prev)
     /*
@@ -330,13 +330,13 @@ final class SwiftLinkedListTests: XCTestCase {
     */
 
     cur = intList.prevNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(3))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(3))")
 
     cur = intList.prevNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(2))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(2))")
 
     cur = intList.prevNode()
-    XCTAssertEqual("\(String(describing: cur))", "Optional(Node(1))")
+    XCTAssertEqual(String(describing: cur), "Optional(Node(1))")
     XCTAssertEqual(cur, intList.head)
     XCTAssertNil(cur!.prev)
 
