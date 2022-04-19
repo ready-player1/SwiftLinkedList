@@ -11,10 +11,7 @@ let people = LinkedList<Int>().circulate()
 people.append(contentsOf: 1...n)
 
 while !people.isEmpty {
-  for _ in 1..<k {
-    people.nextNode()
-  }
-  let cur = people.nextNode()
+  let cur = people.advance(distance: k)
   print("\(people.remove(cur)!) ", terminator: "")
 }
 print()
