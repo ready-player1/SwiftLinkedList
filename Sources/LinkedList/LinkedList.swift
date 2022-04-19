@@ -37,6 +37,7 @@ public class LinkedList<Element: Equatable> {
 
   public var first: Element? { head?.value }
   public var last:  Element? { tail?.value }
+  public var peek:  Element? { ptr?.value  }
 
   public var isEmpty: Bool { head == nil }
 
