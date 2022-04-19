@@ -37,15 +37,6 @@ public class LinkedList<Element: Equatable> {
 
   public var first: Element? { head?.value }
   public var last:  Element? { tail?.value }
-  public var cur:   Element? {
-    get {
-      ptr?.value
-    }
-    set {
-      guard newValue != nil else { return }
-      ptr?.value = newValue!
-    }
-  }
 
   public var isEmpty: Bool { head == nil }
 
