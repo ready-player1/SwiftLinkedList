@@ -26,3 +26,53 @@ Output:
 ## Example
 
 - [josephus](https://github.com/ready-player1/josephus/blob/main/josephus/main.swift)
+
+## Accessing Node Values
+
+When you need to perform an operation on all of a list’s elements, use a for-in loop.
+
+```swift
+let list = LinkedList<String>()
+list.append(contentsOf: ["one", "two", "three"])
+
+for val in list {
+  print(val)
+}
+```
+
+Using the map method provides the same resutl.
+
+```swift
+let list = LinkedList<String>()
+list.append(contentsOf: ["one", "two", "three"])
+list.map { print($0) }
+```
+
+Output:
+
+```
+one
+two
+three
+```
+
+## Accessing Nodes
+
+When you need to perform an operation on all of a list’s nodes, call the nextNode method in a while loop.
+
+```swift
+let list = LinkedList<String>()
+list.append(contentsOf: ["one", "two", "three"])
+
+while let node = list.nextNode() {
+  print(node)
+}
+```
+
+Output:
+
+```
+Node("one")
+Node("two")
+Node("three")
+```
