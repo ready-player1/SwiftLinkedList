@@ -40,7 +40,7 @@ for val in list {
 }
 ```
 
-Using the map method provides the same resutl.
+Using the map(\_:) method provides the same resutl.
 
 ```swift
 let list = LinkedList<String>()
@@ -58,7 +58,7 @@ three
 
 ## Accessing Nodes
 
-When you need to perform an operation on all of a list’s nodes, call the nextNode method in a while loop.
+When you need to perform an operation on all of a list’s nodes, use the nextNode() method in a while loop.
 
 ```swift
 let list = LinkedList<String>()
@@ -75,4 +75,75 @@ Output:
 Node("one")
 Node("two")
 Node("three")
+```
+
+## Adding Elements
+
+When you need to add single elements to the end of a list, use the append(\_:) method. Add multiple elements at the same time by passing an array or a sequence of any kind to the append(contentsOf:) method.
+
+```swift
+let list = LinkedList<Int>()
+list.append(1)
+list.append(2)
+list // LinkedList[1, 2]
+
+list.append(contentsOf: 3...5)
+list // LinkedList[1, 2, 3, 4, 5]
+```
+
+When you need to add single elements to the beginning of a list, use the prepend(\_:) method. Add multiple elements at the same time by passing an array or a sequence of any kind to the prepend(contentsOf:) method.
+
+```swift
+let list = LinkedList<Int>()
+list.prepend(1)
+list.prepend(2)
+list // LinkedList[2, 1]
+
+list.prepend(contentsOf: 3...5)
+list // LinkedList[3, 4, 5, 2, 1]
+```
+
+## Removing Elements
+
+When you need to remove elements from a list, use the popFirst(), popLast(),  and remove(\_:) methods.
+
+```swift
+let list = LinkedList<Int>()
+list.append(contentsOf: 1...2)
+let node = list.append(3) // Node(3)
+list.append(contentsOf: 4...5)
+list // LinkedList[1, 2, 3, 4, 5]
+
+var removed: Int?
+removed = list.popFirst() // 1
+removed = list.popLast() // 5
+removed = list.remove(node) // 3
+list // LinkedList[2, 4]
+```
+
+When you need to remove the first element of the list that satisfies the given predicate, to use remove(where:) method.
+
+```swift
+let list = LinkedList<Int>()
+list.append(contentsOf: 1...8)
+list // LinkedList[1, 2, 3, 4, 5, 6, 7, 8]
+
+let removed = list.remove { $0 % 2 == 0 }
+removed // 2
+list // LinkedList[1, 3, 4, 5, 6, 7, 8]
+```
+
+When you need to remove every element of the list that satisfies the given predicate, to use removeAll(where:) method.
+
+```swift
+let list = LinkedList<Int>()
+list.append(contentsOf: 1...8)
+list // LinkedList[1, 2, 3, 4, 5, 6, 7, 8]
+
+let removed = list.removeAll { $0 % 2 == 0 }
+removed // [2, 4, 6, 8]
+list // LinkedList[1, 3, 5, 7]
+
+list.removeAll()
+list // LinkedList[]
 ```
