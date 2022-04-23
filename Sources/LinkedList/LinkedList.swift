@@ -90,7 +90,7 @@ public class LinkedList<Element: Equatable> {
   }
 
   @discardableResult
-  public func advance(distance: Int) -> Node<Element>? {
+  public func advance(by distance: Int) -> Node<Element>? {
     guard distance != 0 else {
       return ptr
     }

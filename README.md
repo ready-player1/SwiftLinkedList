@@ -11,7 +11,7 @@ let people = LinkedList<Int>().circulate()
 people.append(contentsOf: 1...n)
 
 while !people.isEmpty {
-  let cur = people.advance(distance: k)
+  let cur = people.advance(by: k)
   print("\(people.remove(cur)!) ", terminator: "")
 }
 print()
@@ -121,7 +121,7 @@ removed = list.remove(node) // 3
 list // LinkedList[2, 4]
 ```
 
-When you need to remove the first element of the list that satisfies the given predicate, to use remove(where:) method.
+When you need to remove the first element of the list that satisfies the given predicate, to use the remove(where:) method.
 
 ```swift
 let list = LinkedList<Int>()
@@ -133,7 +133,7 @@ removed // 2
 list // LinkedList[1, 3, 4, 5, 6, 7, 8]
 ```
 
-When you need to remove every element of the list that satisfies the given predicate, to use removeAll(where:) method.
+When you need to remove every element of the list that satisfies the given predicate, to use the removeAll(where:) method.
 
 ```swift
 let list = LinkedList<Int>()

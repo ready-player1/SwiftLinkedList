@@ -295,14 +295,14 @@ final class SwiftLinkedListTests: XCTestCase {
     XCTAssertEqual("\(intList)", "LinkedList[1, 2, 3, 4, 5, 6]")
     XCTAssertEqual(String(describing: intList.peek), "Optional(1)")
 
-    var cur = intList.advance(distance: 1)
+    var cur = intList.advance(by: 1)
     XCTAssertEqual(String(describing: cur), "Optional(Node(1))")
 
-    cur = intList.advance(distance: 4)
+    cur = intList.advance(by: 4)
     XCTAssertEqual(String(describing: cur), "Optional(Node(5))")
 
     intList.pointToTail()
-    cur = intList.advance(distance: -3)
+    cur = intList.advance(by: -3)
     XCTAssertEqual(String(describing: cur), "Optional(Node(4))")
   }
 
