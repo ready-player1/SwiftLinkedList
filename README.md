@@ -39,8 +39,15 @@ for val in list {
   print(val)
 }
 ```
+Output:
 
-Using the map(\_:) method provides the same resutl.
+```
+one
+two
+three
+```
+
+Using the map(\_:) method provides the same result.
 
 ```swift
 let list = LinkedList<String>()
@@ -79,7 +86,7 @@ Node("three")
 
 ## Adding Elements
 
-When you need to add single elements to the end of a list, use the append(\_:) method. Add multiple elements at the same time by passing an array or a sequence of any kind to the append(contentsOf:) method.
+When you need to add single elements to the end of a list, use the append(\_:) method. You can also add multiple elements at the same time by passing an array or a sequence of any kind to the append(contentsOf:) method.
 
 ```swift
 let list = LinkedList<Int>()
@@ -91,7 +98,7 @@ list.append(contentsOf: 3...5)
 list // LinkedList[1, 2, 3, 4, 5]
 ```
 
-When you need to add single elements to the beginning of a list, use the prepend(\_:) method. Add multiple elements at the same time by passing an array or a sequence of any kind to the prepend(contentsOf:) method.
+When you need to add single elements to the beginning of a list, use the prepend(\_:) method. You can also add multiple elements at the same time by passing an array or a sequence of any kind to the prepend(contentsOf:) method.
 
 ```swift
 let list = LinkedList<Int>()
